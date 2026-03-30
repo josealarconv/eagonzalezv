@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>E. A. Gonzalez V. | Estilo Moderno</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#00192F',
+                        brown: '#A26D5D',
+                        spruce: '#4C6665',
+                        lightgreen: '#9AB5AE',
+                        beige: '#DBDAD5',
+                        white: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Ocultar scrollbar para el carrusel de servicios en móvil */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-sans text-navy bg-white antialiased flex flex-col min-h-screen pb-20 md:pb-0">
+
+    <!-- Navegación Minimalista -->
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="#" class="flex flex-col">
+                        <span class="text-2xl font-bold text-navy tracking-tight leading-none">E. A. Gonzalez V.</span>
+                        <span class="text-[0.65rem] text-brown font-semibold tracking-widest uppercase mt-1">Professional Services</span>
+                    </a>
+                </div>
+                <!-- Menú Desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#servicios" class="text-spruce hover:text-brown font-medium text-sm">Servicios</a>
+                    <a href="#nosotros" class="text-spruce hover:text-brown font-medium text-sm">Nosotros</a>
+                    <a href="#contacto" class="bg-brown text-white text-sm font-semibold px-6 py-2 rounded-full hover:bg-navy transition-all shadow-md">Contáctanos</a>
+                </div>
+                <!-- Menú Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-navy p-2 bg-beige/30 rounded-full focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero App-Style (AJUSTADO: Simetría de márgenes laterales) -->
+    <header class="bg-beige pt-8 pb-10 md:py-12 rounded-b-[3rem] shadow-sm relative overflow-hidden mx-2 md:mx-4 mt-2">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            
+            <!-- Columna de Texto -->
+            <div class="md:w-1/2 z-10 text-left">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-white/50 text-brown font-bold text-xs uppercase tracking-wider mb-4">Trámites sin estrés</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-navy leading-tight mb-4">
+                    Trabajamos hoy para transformar tu futuro en EE.UU.
+                </h1>
+                <p class="text-spruce mb-6 text-base md:text-lg leading-relaxed font-medium">
+                    Inmigración, notary public, taxes, negocios y seguros. Todo centralizado y optimizado para ti.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contacto" class="bg-navy text-white font-semibold px-8 py-3.5 rounded-full text-center shadow-lg shadow-navy/20 active:scale-95 transition-transform flex items-center justify-center gap-2">
+                        Agendar Cita <i class="fas fa-calendar-alt"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Columna de Imagen (AJUSTADA: Alineación al final para coherencia de márgenes) -->
+            <div class="md:w-1/2 w-full flex justify-center md:justify-end mt-6 md:mt-0 relative z-10">
+                <!-- Contenedor con aspect ratio 4:5 (retrato) -->
+                <div class="relative w-full max-w-[340px] md:max-w-[360px] lg:max-w-[400px] aspect-[4/5]">
+                    <div class="absolute inset-0 bg-lightgreen rounded-full blur-3xl opacity-30 transform translate-x-8 translate-y-8"></div>
+                    <img src="https://i.postimg.cc/cCCkft3w/Dibujo-sin-ti-tulo-(3).png" alt="E.A. Gonzalez V." class="w-full h-full object-cover object-center rounded-[2.5rem] shadow-xl relative z-10 border-4 border-white">
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Servicios (Scroll Horizontal en Móvil) -->
+    <section id="servicios" class="py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">¿En qué podemos ayudarte?</h2>
+            <p class="text-spruce font-medium">Desliza para explorar nuestros servicios</p>
+        </div>
+
+        <!-- Contenedor con scroll horizontal en móvil, grid en desktop -->
+        <div class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory px-4 sm:px-6 lg:px-8 gap-6 pb-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible">
+            
+            <!-- Card -->
+            <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white border-2 border-beige rounded-[2rem] p-8 shadow-sm hover:shadow-xl hover:border-lightgreen transition-all flex flex-col h-full">
+                <div class="w-14 h-14 bg-beige rounded-2xl flex items-center justify-center text-navy text-xl mb-6">
+                    <i class="fas fa-passport"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Inmigración y Visas</h3>
+                <p class="text-spruce text-sm leading-relaxed mb-6 flex-grow">Acompañamiento en visas de turismo, empleo, ajustes de estatus y peticiones familiares.</p>
+                <a href="#contacto" class="text-brown font-semibold text-sm flex items-center gap-2">Solicitar <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white border-2 border-beige rounded-[2rem] p-8 shadow-sm hover:shadow-xl hover:border-lightgreen transition-all flex flex-col h-full">
+                <div class="w-14 h-14 bg-beige rounded-2xl flex items-center justify-center text-navy text-xl mb-6">
+                    <i class="fas fa-file-signature"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Notary Public</h3>
+                <p class="text-spruce text-sm leading-relaxed mb-6 flex-grow">Poderes, declaraciones juradas, cierres de ventas, testamentos y celebración de matrimonios.</p>
+                <a href="#contacto" class="text-brown font-semibold text-sm flex items-center gap-2">Solicitar <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Card: Taxes Personales -->
+            <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white border-2 border-beige rounded-[2rem] p-8 shadow-sm hover:shadow-xl hover:border-lightgreen transition-all flex flex-col h-full">
+                <div class="w-14 h-14 bg-beige rounded-2xl flex items-center justify-center text-navy text-xl mb-6">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Taxes Personales</h3>
+                <p class="text-spruce text-sm leading-relaxed mb-6 flex-grow">Preparación de taxes (1040) garantizando el cumplimiento fiscal y optimizando tus beneficios.</p>
+                <a href="#contacto" class="text-brown font-semibold text-sm flex items-center gap-2">Solicitar <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <!-- Card: Seguros -->
+            <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white border-2 border-beige rounded-[2rem] p-8 shadow-sm hover:shadow-xl hover:border-lightgreen transition-all flex flex-col h-full relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-brown text-white text-[0.65rem] font-bold uppercase tracking-wider py-1.5 px-4 rounded-bl-2xl z-10 shadow-sm">
+                    Agente Licenciada
+                </div>
+                <div class="w-14 h-14 bg-beige rounded-2xl flex items-center justify-center text-navy text-xl mb-6">
+                    <i class="fas fa-shield-heart"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Seguros de Salud y Vida</h3>
+                <p class="text-spruce text-sm leading-relaxed mb-6 flex-grow">Protege tu futuro. Asesoría oficial para elegir la póliza de vida o salud ideal para ti y tu familia.</p>
+                <a href="#contacto" class="text-brown font-semibold text-sm flex items-center gap-2">Solicitar <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Card: Negocios -->
+            <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white border-2 border-beige rounded-[2rem] p-8 shadow-sm hover:shadow-xl hover:border-lightgreen transition-all flex flex-col h-full">
+                <div class="w-14 h-14 bg-beige rounded-2xl flex items-center justify-center text-navy text-xl mb-6">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Constitución de Empresas</h3>
+                <p class="text-spruce text-sm leading-relaxed mb-6 flex-grow">Apertura de LLCs, Corporaciones y obtención de EIN paso a paso para que emprendas con seguridad.</p>
+                <a href="#contacto" class="text-brown font-semibold text-sm flex items-center gap-2">Solicitar <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Card: Traducciones -->
+            <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white border-2 border-beige rounded-[2rem] p-8 shadow-sm hover:shadow-xl hover:border-lightgreen transition-all flex flex-col h-full">
+                <div class="w-14 h-14 bg-beige rounded-2xl flex items-center justify-center text-navy text-xl mb-6">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Traducciones Certificadas</h3>
+                <p class="text-spruce text-sm leading-relaxed mb-6 flex-grow">Traducción precisa y con validez oficial para todos tus procesos migratorios y legales en EE.UU.</p>
+                <a href="#contacto" class="text-brown font-semibold text-sm flex items-center gap-2">Solicitar <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Nosotros & Perfil Profesional -->
+    <section id="nosotros" class="py-16 md:py-24 bg-spruce rounded-[3rem] mx-2 md:mx-4 mb-16 text-white px-6 md:px-12 lg:px-20 overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-lightgreen rounded-full blur-3xl opacity-20"></div>
+
+        <!-- Bloque Perfil Profesional -->
+        <div class="bg-white text-navy rounded-[2.5rem] p-8 md:p-10 shadow-2xl relative z-10 mb-16 flex flex-col md:flex-row gap-8 items-center border border-white/50">
+            <div class="w-full md:w-1/3 flex justify-center">
+                <img src="https://i.postimg.cc/t42WPv98/Captura_de_pantalla_2026_03_30_a_la(s)_11_37_15_a_m.png" alt="Evelyn Adriana Gonzalez Valera" class="w-64 md:w-full md:max-w-[280px] h-auto rounded-[2rem] border-4 border-beige shadow-lg">
+            </div>
+            <div class="w-full md:w-2/3">
+                <span class="bg-beige text-brown font-bold text-[0.65rem] uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block">Fundadora & Asesora Principal</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-navy tracking-tight">Evelyn Adriana Gonzalez V.</h2>
+                <p class="text-spruce mb-4 leading-relaxed font-medium text-sm md:text-base">
+                    Abogada egresada en Venezuela con más de 20 años de sólida trayectoria en derecho laboral, civil, mercantil y de seguros, complementada con estudios superiores en Gerencia.
+                </p>
+                <p class="text-spruce leading-relaxed font-medium text-sm md:text-base mb-6">
+                    Hoy, establecida en EE.UU., pone toda su experiencia al servicio de la comunidad hispana. Está certificada como preparadora de formas para procesos migratorios y cuenta con licencias oficiales vigentes como <strong>Notary Public de Florida</strong> y <strong>Agente de Seguros de Salud y Vida</strong>.
+                </p>
+                <!-- Badges de credenciales -->
+                <div class="flex flex-wrap gap-2 md:gap-3">
+                    <span class="bg-beige/40 text-navy text-[0.65rem] sm:text-xs font-bold px-4 py-2 rounded-full border border-beige/60"><i class="fas fa-balance-scale mr-1.5 text-brown"></i> +20 Años Experiencia</span>
+                    <span class="bg-beige/40 text-navy text-[0.65rem] sm:text-xs font-bold px-4 py-2 rounded-full border border-beige/60"><i class="fas fa-shield-heart mr-1.5 text-brown"></i> Licencia Seguros</span>
+                    <span class="bg-beige/40 text-navy text-[0.65rem] sm:text-xs font-bold px-4 py-2 rounded-full border border-beige/60"><i class="fas fa-file-signature mr-1.5 text-brown"></i> Notary Public FL</span>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-2xl md:text-3xl font-bold mb-10 text-center relative z-10">Nuestra Filosofía de Trabajo</h3>
+        
+        <div class="grid md:grid-cols-2 gap-8 relative z-10">
+            <!-- Valores Institucionales -->
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-[2rem] border border-white/20">
+                <div class="w-12 h-12 bg-brown rounded-full flex items-center justify-center mb-6 text-xl">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Hablamos más que tu idioma</h4>
+                <p class="text-beige text-sm leading-relaxed">Entendemos tu cultura y los retos de establecerte en Estados Unidos. Más allá de hablar español, te brindamos la confianza y la empatía que necesitas.</p>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-[2rem] border border-white/20">
+                <div class="w-12 h-12 bg-brown rounded-full flex items-center justify-center mb-6 text-xl">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Transparencia e Integridad</h4>
+                <p class="text-beige text-sm leading-relaxed">Actuamos con honestidad y coherencia en todo momento. Construimos confianza basada en la claridad absoluta en cada interacción.</p>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-[2rem] border border-white/20">
+                <div class="w-12 h-12 bg-brown rounded-full flex items-center justify-center mb-6 text-xl">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Profesionalismo y Ética</h4>
+                <p class="text-beige text-sm leading-relaxed">Altos estándares de competencia. Cumplimos con eficacia y puntualidad, innovando para adaptarnos a tus necesidades cambiantes.</p>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-[2rem] border border-white/20">
+                <div class="w-12 h-12 bg-brown rounded-full flex items-center justify-center mb-6 text-xl">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">Compromiso y Solidaridad</h4>
+                <p class="text-beige text-sm leading-relaxed">Nos ponemos en tu lugar para ofrecer soluciones personalizadas, trabajando juntos para mejorar la calidad de vida de nuestra comunidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="py-16 md:py-20 mx-2 md:mx-4 mb-16 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="bg-beige rounded-[3rem] overflow-hidden shadow-sm flex flex-col lg:flex-row border-2 border-beige">
+                
+                <!-- Info de Contacto -->
+                <div class="lg:w-2/5 bg-navy text-white p-10 md:p-14 flex flex-col justify-center relative">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brown opacity-20 rounded-bl-full"></div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 z-10">Iniciemos tu trámite</h2>
+                    <p class="text-lightgreen font-medium mb-10 text-sm z-10">
+                        Agende una consulta o solicite información sobre nuestros servicios.
+                    </p>
+                    
+                    <div class="space-y-8 relative z-10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-brown text-xl">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-lightgreen uppercase tracking-widest mb-1 font-bold">Email</p>
+                                <p class="font-medium text-beige">contacto@eagonzalezv.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redes Sociales -->
+                    <div class="mt-8 relative z-10">
+                        <p class="text-xs text-lightgreen uppercase tracking-widest mb-4 font-bold">Síguenos en redes:</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-brown transition-all text-lg text-beige">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-brown transition-all text-lg text-beige">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-brown transition-all text-lg text-beige">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="lg:w-3/5 p-10 md:p-14 bg-white">
+                    <h3 class="text-2xl font-bold text-navy mb-8">Envíanos un mensaje</h3>
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Gracias por su mensaje. Lo atenderemos a la brevedad.');">
+                        <div>
+                            <label class="block text-xs font-bold text-spruce uppercase tracking-wider mb-2">Nombre Completo</label>
+                            <input type="text" class="w-full px-5 py-3.5 bg-beige/30 border border-transparent rounded-xl focus:ring-2 focus:ring-brown focus:border-brown outline-none text-navy transition-all" placeholder="Ej. Carlos Martínez" required>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-spruce uppercase tracking-wider mb-2">Teléfono</label>
+                                <input type="tel" class="w-full px-5 py-3.5 bg-beige/30 border border-transparent rounded-xl focus:ring-2 focus:ring-brown focus:border-brown outline-none text-navy transition-all" placeholder="+1 (555) 000-0000" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-spruce uppercase tracking-wider mb-2">Servicio de Interés</label>
+                                <select class="w-full px-5 py-3.5 bg-beige/30 border border-transparent rounded-xl focus:ring-2 focus:ring-brown focus:border-brown outline-none text-navy transition-all">
+                                    <option>Inmigración</option>
+                                    <option>Notary Public</option>
+                                    <option>Taxes Personales</option>
+                                    <option>Constitución de Empresas</option>
+                                    <option>Seguros de Salud y Vida</option>
+                                    <option>Traducciones Certificadas</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-spruce uppercase tracking-wider mb-2">Mensaje o Consulta</label>
+                            <textarea rows="4" class="w-full px-5 py-3.5 bg-beige/30 border border-transparent rounded-xl focus:ring-2 focus:ring-brown focus:border-brown outline-none text-navy resize-none transition-all" placeholder="Escriba su mensaje aquí..." required></textarea>
+                        </div>
+                        <div class="pt-4">
+                            <button type="submit" class="w-full md:w-auto bg-brown text-white font-bold px-10 py-4 rounded-full hover:bg-navy transition-colors flex items-center justify-center gap-3 shadow-lg shadow-brown/20">
+                                Enviar Solicitud <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Mobile CTA -->
+    <div class="fixed bottom-4 left-4 right-4 z-50 md:hidden">
+        <a href="#contacto" class="bg-brown text-white w-full py-4 rounded-full font-bold text-center shadow-2xl flex justify-center items-center gap-3 border-2 border-white">
+            <i class="fab fa-whatsapp text-xl"></i> Escríbenos ahora
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-lightgreen py-12 text-center text-sm mt-10 rounded-t-[3rem] mx-2 md:mx-4 mb-24 md:mb-2">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex justify-center items-center mb-6 opacity-90">
+                <span class="text-4xl font-bold text-brown tracking-tighter">EA</span>
+            </div>
+            <p class="text-lg font-bold text-white mb-2">E. A. Gonzalez V. <span class="font-normal text-brown text-sm md:text-base">| Professional Services</span></p>
+            <p class="font-medium mb-6 text-beige/60 text-xs md:text-sm">&copy; 2026 eagonzalezv.com. Todos los derechos reservados.</p>
+            <p class="text-[0.65rem] md:text-xs font-medium text-lightgreen/60 leading-relaxed px-4 md:px-12">
+                Aviso Legal: Evelyn Adriana Gonzalez Valera no es abogada en los Estados Unidos y tampoco representa a un bufete de abogados en los Estados Unidos, por lo tanto, no proporcionamos consejos ni asesorías legales.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
