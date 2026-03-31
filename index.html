@@ -68,13 +68,14 @@
         </div>
     </nav>
 
-    <!-- Hero App-Style (AJUSTADO: Simetría de márgenes laterales) -->
+    <!-- Hero App-Style -->
     <header class="bg-beige pt-8 pb-10 md:py-12 rounded-b-[3rem] shadow-sm relative overflow-hidden mx-2 md:mx-4 mt-2">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center gap-8 md:gap-12">
             
             <!-- Columna de Texto -->
             <div class="md:w-1/2 z-10 text-left">
                 <span class="inline-block px-4 py-1.5 rounded-full bg-white/50 text-brown font-bold text-xs uppercase tracking-wider mb-4">Trámites sin estrés</span>
+                <!-- Textos más apretados -->
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-navy leading-tight mb-4">
                     Trabajamos hoy para transformar tu futuro en EE.UU.
                 </h1>
@@ -88,7 +89,7 @@
                 </div>
             </div>
             
-            <!-- Columna de Imagen (AJUSTADA: Alineación al final para coherencia de márgenes) -->
+            <!-- Columna de Imagen (Alineada al final) -->
             <div class="md:w-1/2 w-full flex justify-center md:justify-end mt-6 md:mt-0 relative z-10">
                 <!-- Contenedor con aspect ratio 4:5 (retrato) -->
                 <div class="relative w-full max-w-[340px] md:max-w-[360px] lg:max-w-[400px] aspect-[4/5]">
@@ -100,17 +101,15 @@
         </div>
     </header>
 
-    <!-- Servicios (Scroll Horizontal en Móvil) -->
+    <!-- Servicios -->
     <section id="servicios" class="py-16 md:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
             <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">¿En qué podemos ayudarte?</h2>
             <p class="text-spruce font-medium">Desliza para explorar nuestros servicios</p>
         </div>
 
-        <!-- Contenedor con scroll horizontal en móvil, grid en desktop -->
         <div class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory px-4 sm:px-6 lg:px-8 gap-6 pb-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible">
             
-            <!-- Card -->
             <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white border-2 border-beige rounded-[2rem] p-8 shadow-sm hover:shadow-xl hover:border-lightgreen transition-all flex flex-col h-full">
                 <div class="w-14 h-14 bg-beige rounded-2xl flex items-center justify-center text-navy text-xl mb-6">
                     <i class="fas fa-passport"></i>
@@ -129,7 +128,6 @@
                 <a href="#contacto" class="text-brown font-semibold text-sm flex items-center gap-2">Solicitar <i class="fas fa-arrow-right"></i></a>
             </div>
 
-            <!-- Card: Taxes Personales -->
             <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white border-2 border-beige rounded-[2rem] p-8 shadow-sm hover:shadow-xl hover:border-lightgreen transition-all flex flex-col h-full">
                 <div class="w-14 h-14 bg-beige rounded-2xl flex items-center justify-center text-navy text-xl mb-6">
                     <i class="fas fa-calculator"></i>
@@ -139,7 +137,6 @@
                 <a href="#contacto" class="text-brown font-semibold text-sm flex items-center gap-2">Solicitar <i class="fas fa-arrow-right"></i></a>
             </div>
             
-            <!-- Card: Seguros -->
             <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white border-2 border-beige rounded-[2rem] p-8 shadow-sm hover:shadow-xl hover:border-lightgreen transition-all flex flex-col h-full relative overflow-hidden">
                 <div class="absolute top-0 right-0 bg-brown text-white text-[0.65rem] font-bold uppercase tracking-wider py-1.5 px-4 rounded-bl-2xl z-10 shadow-sm">
                     Agente Licenciada
@@ -152,7 +149,6 @@
                 <a href="#contacto" class="text-brown font-semibold text-sm flex items-center gap-2">Solicitar <i class="fas fa-arrow-right"></i></a>
             </div>
 
-            <!-- Card: Negocios -->
             <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white border-2 border-beige rounded-[2rem] p-8 shadow-sm hover:shadow-xl hover:border-lightgreen transition-all flex flex-col h-full">
                 <div class="w-14 h-14 bg-beige rounded-2xl flex items-center justify-center text-navy text-xl mb-6">
                     <i class="fas fa-building"></i>
@@ -162,7 +158,6 @@
                 <a href="#contacto" class="text-brown font-semibold text-sm flex items-center gap-2">Solicitar <i class="fas fa-arrow-right"></i></a>
             </div>
 
-            <!-- Card: Traducciones -->
             <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white border-2 border-beige rounded-[2rem] p-8 shadow-sm hover:shadow-xl hover:border-lightgreen transition-all flex flex-col h-full">
                 <div class="w-14 h-14 bg-beige rounded-2xl flex items-center justify-center text-navy text-xl mb-6">
                     <i class="fas fa-language"></i>
@@ -205,7 +200,6 @@
         <h3 class="text-2xl md:text-3xl font-bold mb-10 text-center relative z-10">Nuestra Filosofía de Trabajo</h3>
         
         <div class="grid md:grid-cols-2 gap-8 relative z-10">
-            <!-- Valores Institucionales -->
             <div class="bg-white/10 backdrop-blur-md p-8 rounded-[2rem] border border-white/20">
                 <div class="w-12 h-12 bg-brown rounded-full flex items-center justify-center mb-6 text-xl">
                     <i class="fas fa-handshake"></i>
@@ -285,19 +279,19 @@
                 <!-- Formulario -->
                 <div class="lg:w-3/5 p-10 md:p-14 bg-white">
                     <h3 class="text-2xl font-bold text-navy mb-8">Envíanos un mensaje</h3>
-                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Gracias por su mensaje. Lo atenderemos a la brevedad.');">
+                    <form id="whatsappForm" class="space-y-6">
                         <div>
                             <label class="block text-xs font-bold text-spruce uppercase tracking-wider mb-2">Nombre Completo</label>
-                            <input type="text" class="w-full px-5 py-3.5 bg-beige/30 border border-transparent rounded-xl focus:ring-2 focus:ring-brown focus:border-brown outline-none text-navy transition-all" placeholder="Ej. Carlos Martínez" required>
+                            <input type="text" id="form_nombre" class="w-full px-5 py-3.5 bg-beige/30 border border-transparent rounded-xl focus:ring-2 focus:ring-brown focus:border-brown outline-none text-navy transition-all" placeholder="Ej. Carlos Martínez" required>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-xs font-bold text-spruce uppercase tracking-wider mb-2">Teléfono</label>
-                                <input type="tel" class="w-full px-5 py-3.5 bg-beige/30 border border-transparent rounded-xl focus:ring-2 focus:ring-brown focus:border-brown outline-none text-navy transition-all" placeholder="+1 (555) 000-0000" required>
+                                <input type="tel" id="form_tel" class="w-full px-5 py-3.5 bg-beige/30 border border-transparent rounded-xl focus:ring-2 focus:ring-brown focus:border-brown outline-none text-navy transition-all" placeholder="+1 (555) 000-0000" required>
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-spruce uppercase tracking-wider mb-2">Servicio de Interés</label>
-                                <select class="w-full px-5 py-3.5 bg-beige/30 border border-transparent rounded-xl focus:ring-2 focus:ring-brown focus:border-brown outline-none text-navy transition-all">
+                                <select id="form_servicio" class="w-full px-5 py-3.5 bg-beige/30 border border-transparent rounded-xl focus:ring-2 focus:ring-brown focus:border-brown outline-none text-navy transition-all">
                                     <option>Inmigración</option>
                                     <option>Notary Public</option>
                                     <option>Taxes Personales</option>
@@ -309,11 +303,11 @@
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-spruce uppercase tracking-wider mb-2">Mensaje o Consulta</label>
-                            <textarea rows="4" class="w-full px-5 py-3.5 bg-beige/30 border border-transparent rounded-xl focus:ring-2 focus:ring-brown focus:border-brown outline-none text-navy resize-none transition-all" placeholder="Escriba su mensaje aquí..." required></textarea>
+                            <textarea id="form_mensaje" rows="4" class="w-full px-5 py-3.5 bg-beige/30 border border-transparent rounded-xl focus:ring-2 focus:ring-brown focus:border-brown outline-none text-navy resize-none transition-all" placeholder="Escriba su mensaje aquí..." required></textarea>
                         </div>
                         <div class="pt-4">
                             <button type="submit" class="w-full md:w-auto bg-brown text-white font-bold px-10 py-4 rounded-full hover:bg-navy transition-colors flex items-center justify-center gap-3 shadow-lg shadow-brown/20">
-                                Enviar Solicitud <i class="fas fa-paper-plane"></i>
+                                Enviar Solicitud <i class="fab fa-whatsapp text-xl"></i>
                             </button>
                         </div>
                     </form>
@@ -322,7 +316,7 @@
         </div>
     </section>
 
-    <!-- Floating Mobile CTA -->
+    <!-- Floating Mobile CTA (Sólo visible en móviles) -->
     <div class="fixed bottom-4 left-4 right-4 z-50 md:hidden">
         <a href="#contacto" class="bg-brown text-white w-full py-4 rounded-full font-bold text-center shadow-2xl flex justify-center items-center gap-3 border-2 border-white">
             <i class="fab fa-whatsapp text-xl"></i> Escríbenos ahora
@@ -342,6 +336,31 @@
             </p>
         </div>
     </footer>
+
+    <!-- Lógica de WhatsApp -->
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // CONFIGURACIÓN: Reemplaza con tu número real (ej: 17861234567)
+            const CONST_TELEFONO = "1234567890"; 
+            
+            // Capturar datos
+            const nombre = document.getElementById('form_nombre').value;
+            const tel = document.getElementById('form_tel').value;
+            const servicio = document.getElementById('form_servicio').value;
+            const mensaje = document.getElementById('form_mensaje').value;
+            
+            // Construir el mensaje
+            const texto = `Hola Evelyn, mi nombre es ${nombre}.\nEstoy interesado en el servicio de: *${servicio}*.\n\nMi mensaje: ${mensaje}\n\nMi contacto: ${tel}`;
+            
+            // Codificar para URL
+            const mensajeFinal = encodeURIComponent(texto);
+            
+            // Abrir WhatsApp
+            window.open(`https://wa.me/${CONST_TELEFONO}?text=${mensajeFinal}`, '_blank');
+        });
+    </script>
 
 </body>
 </html>
