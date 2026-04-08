@@ -38,6 +38,10 @@
         /* Ocultar scrollbar para el carrusel de servicios en móvil */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Sistema de Idiomas */
+        html[lang="es"] .lang-en { display: none; }
+        html[lang="en"] .lang-es { display: none; }
     </style>
 </head>
 <body class="font-sans text-navy bg-white antialiased flex flex-col min-h-screen">
@@ -56,13 +60,29 @@
                 
                 <!-- Menú Desktop -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#servicios" class="text-grayCorp hover:text-sand font-medium text-sm transition-colors">Servicios</a>
-                    <a href="#nosotros" class="text-grayCorp hover:text-sand font-medium text-sm transition-colors">Nosotros</a>
-                    <a href="#contacto" class="bg-sand text-white text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-navy transition-all shadow-md">Contáctanos</a>
+                    <a href="#servicios" class="text-grayCorp hover:text-sand font-medium text-sm transition-colors">
+                        <span class="lang-es">Servicios</span><span class="lang-en">Services</span>
+                    </a>
+                    <a href="#nosotros" class="text-grayCorp hover:text-sand font-medium text-sm transition-colors">
+                        <span class="lang-es">Nosotros</span><span class="lang-en">About Us</span>
+                    </a>
+                    <a href="#contacto" class="bg-sand text-white text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-navy transition-all shadow-md">
+                        <span class="lang-es">Contáctanos</span><span class="lang-en">Contact Us</span>
+                    </a>
+                    <!-- Toggle Idioma Desktop -->
+                    <button onclick="toggleLanguage()" class="flex items-center gap-2 text-navy font-bold text-sm bg-slate px-4 py-2 rounded-full hover:bg-sand hover:text-white transition-colors border border-slate shadow-sm">
+                        <i class="fas fa-globe"></i> 
+                        <span class="lang-es">EN</span><span class="lang-en">ES</span>
+                    </button>
                 </div>
                 
                 <!-- Botón Menú Mobile -->
-                <div class="md:hidden flex items-center">
+                <div class="md:hidden flex items-center gap-3">
+                    <!-- Toggle Idioma Mobile -->
+                    <button onclick="toggleLanguage()" class="flex items-center gap-1 text-navy font-bold text-xs bg-slate px-3 py-1.5 rounded-full hover:bg-sand hover:text-white transition-colors border border-slate shadow-sm">
+                        <i class="fas fa-globe"></i> 
+                        <span class="lang-es">EN</span><span class="lang-en">ES</span>
+                    </button>
                     <button id="mobile-menu-btn" class="text-navy p-2 bg-slate rounded-full focus:outline-none hover:bg-sand/20 transition-colors">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
@@ -72,9 +92,15 @@
             <!-- Menú Desplegable Mobile -->
             <div id="mobile-menu" class="hidden md:hidden absolute top-28 left-0 w-full bg-white border-b border-slate shadow-2xl z-40">
                 <div class="flex flex-col px-6 py-4 space-y-4 pb-8">
-                    <a href="#servicios" class="mobile-link text-navy font-bold text-lg border-b border-slate pb-2"><i class="fas fa-briefcase text-sand mr-2 w-5"></i> Servicios</a>
-                    <a href="#nosotros" class="mobile-link text-navy font-bold text-lg border-b border-slate pb-2"><i class="fas fa-user-tie text-sand mr-2 w-5"></i> Nosotros</a>
-                    <a href="#contacto" class="mobile-link text-navy font-bold text-lg pb-2"><i class="fas fa-envelope text-sand mr-2 w-5"></i> Contáctanos</a>
+                    <a href="#servicios" class="mobile-link text-navy font-bold text-lg border-b border-slate pb-2">
+                        <i class="fas fa-briefcase text-sand mr-2 w-5"></i> <span class="lang-es">Servicios</span><span class="lang-en">Services</span>
+                    </a>
+                    <a href="#nosotros" class="mobile-link text-navy font-bold text-lg border-b border-slate pb-2">
+                        <i class="fas fa-user-tie text-sand mr-2 w-5"></i> <span class="lang-es">Nosotros</span><span class="lang-en">About Us</span>
+                    </a>
+                    <a href="#contacto" class="mobile-link text-navy font-bold text-lg pb-2">
+                        <i class="fas fa-envelope text-sand mr-2 w-5"></i> <span class="lang-es">Contáctanos</span><span class="lang-en">Contact Us</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -86,21 +112,25 @@
             
             <!-- Columna de Texto -->
             <div class="md:w-1/2 z-10 text-left">
-                <span class="inline-block px-4 py-1.5 rounded-full bg-white/60 text-sand font-bold text-xs uppercase tracking-widest mb-4 border border-sand/20">Trámites sin estrés</span>
+                <span class="inline-block px-4 py-1.5 rounded-full bg-white/60 text-sand font-bold text-xs uppercase tracking-widest mb-4 border border-sand/20">
+                    <span class="lang-es">Trámites sin estrés</span><span class="lang-en">Stress-Free Processing</span>
+                </span>
                 <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-navy leading-tight mb-4">
-                    Trabajamos hoy para transformar tu futuro en EE.UU.
+                    <span class="lang-es">Trabajamos hoy para transformar tu futuro en EE.UU.</span>
+                    <span class="lang-en">We work today to transform your future in the U.S.</span>
                 </h1>
                 <p class="text-grayCorp mb-6 text-base md:text-lg leading-relaxed font-medium">
-                    Inmigración, notary public, taxes, negocios y seguros. Todo centralizado, legal y optimizado para ti.
+                    <span class="lang-es">Inmigración, notary public, taxes, negocios y seguros. Todo centralizado, legal y optimizado para ti.</span>
+                    <span class="lang-en">Immigration, notary public, taxes, business, and insurance. Everything centralized, legal, and optimized for you.</span>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#contacto" class="bg-navy text-white font-semibold px-8 py-3.5 rounded-full text-center shadow-lg shadow-navy/20 hover:bg-sand transition-colors flex items-center justify-center gap-2">
-                        Agendar Cita <i class="fas fa-calendar-alt"></i>
+                        <span class="lang-es">Agendar Cita</span><span class="lang-en">Book Appointment</span> <i class="fas fa-calendar-alt"></i>
                     </a>
                 </div>
             </div>
             
-            <!-- Columna de Imagen (Alineada al final) -->
+            <!-- Columna de Imagen -->
             <div class="md:w-1/2 w-full flex justify-center md:justify-end mt-6 md:mt-0 relative z-10">
                 <div class="relative w-full max-w-[340px] md:max-w-[360px] lg:max-w-[400px] aspect-[4/5]">
                     <div class="absolute inset-0 bg-sand rounded-full blur-3xl opacity-20 transform translate-x-8 translate-y-8"></div>
@@ -111,11 +141,16 @@
         </div>
     </header>
 
-    <!-- Servicios (Ahora con imágenes de cintillo ampliadas) -->
+    <!-- Servicios -->
     <section id="servicios" class="py-16 md:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-            <h2 class="font-serif text-3xl md:text-5xl font-bold text-navy mb-4">¿En qué podemos ayudarte?</h2>
-            <p class="text-grayCorp font-medium">Desliza para explorar nuestras áreas de práctica profesional.</p>
+            <h2 class="font-serif text-3xl md:text-5xl font-bold text-navy mb-4">
+                <span class="lang-es">¿En qué podemos ayudarte?</span><span class="lang-en">How can we help you?</span>
+            </h2>
+            <p class="text-grayCorp font-medium">
+                <span class="lang-es">Desliza para explorar nuestras áreas de práctica profesional.</span>
+                <span class="lang-en">Swipe to explore our professional practice areas.</span>
+            </p>
         </div>
 
         <div class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory px-4 sm:px-6 lg:px-8 gap-6 pb-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible">
@@ -127,9 +162,16 @@
                     <div class="absolute inset-0 bg-navy/10 group-hover:bg-transparent transition-colors duration-300"></div>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
-                    <h3 class="font-serif text-2xl font-bold text-navy mb-3">Inmigración y Visas</h3>
-                    <p class="text-grayCorp text-sm leading-relaxed mb-6 flex-grow">Acompañamiento integral en visas de turismo, empleo, ajustes de estatus y peticiones familiares.</p>
-                    <a href="#contacto" class="text-sand font-bold text-sm flex items-center gap-2 uppercase tracking-wide">Solicitar <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-3">
+                        <span class="lang-es">Inmigración y Visas</span><span class="lang-en">Immigration & Visas</span>
+                    </h3>
+                    <p class="text-grayCorp text-sm leading-relaxed mb-6 flex-grow">
+                        <span class="lang-es">Acompañamiento integral en visas de turismo, empleo, ajustes de estatus y peticiones familiares.</span>
+                        <span class="lang-en">Comprehensive support for tourist visas, employment, status adjustments, and family petitions.</span>
+                    </p>
+                    <a href="#contacto" class="text-sand font-bold text-sm flex items-center gap-2 uppercase tracking-wide">
+                        <span class="lang-es">Solicitar</span><span class="lang-en">Request</span> <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
@@ -141,8 +183,13 @@
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
                     <h3 class="font-serif text-2xl font-bold text-navy mb-3">Notary Public</h3>
-                    <p class="text-grayCorp text-sm leading-relaxed mb-6 flex-grow">Poderes, declaraciones juradas, cierres de ventas, testamentos y celebración legal de matrimonios.</p>
-                    <a href="#contacto" class="text-sand font-bold text-sm flex items-center gap-2 uppercase tracking-wide">Solicitar <i class="fas fa-arrow-right"></i></a>
+                    <p class="text-grayCorp text-sm leading-relaxed mb-6 flex-grow">
+                        <span class="lang-es">Poderes, declaraciones juradas, cierres de ventas, testamentos y celebración legal de matrimonios.</span>
+                        <span class="lang-en">Powers of attorney, affidavits, real estate closings, wills, and legal marriage ceremonies.</span>
+                    </p>
+                    <a href="#contacto" class="text-sand font-bold text-sm flex items-center gap-2 uppercase tracking-wide">
+                        <span class="lang-es">Solicitar</span><span class="lang-en">Request</span> <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
@@ -153,25 +200,39 @@
                     <div class="absolute inset-0 bg-navy/10 group-hover:bg-transparent transition-colors duration-300"></div>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
-                    <h3 class="font-serif text-2xl font-bold text-navy mb-3">Taxes Personales</h3>
-                    <p class="text-grayCorp text-sm leading-relaxed mb-6 flex-grow">Preparación de taxes (1040) garantizando el cumplimiento fiscal y optimizando tus beneficios anuales.</p>
-                    <a href="#contacto" class="text-sand font-bold text-sm flex items-center gap-2 uppercase tracking-wide">Solicitar <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-3">
+                        <span class="lang-es">Taxes Personales</span><span class="lang-en">Personal Taxes</span>
+                    </h3>
+                    <p class="text-grayCorp text-sm leading-relaxed mb-6 flex-grow">
+                        <span class="lang-es">Preparación de taxes (1040) garantizando el cumplimiento fiscal y optimizando tus beneficios anuales.</span>
+                        <span class="lang-en">Tax preparation (1040) ensuring tax compliance and optimizing your annual benefits.</span>
+                    </p>
+                    <a href="#contacto" class="text-sand font-bold text-sm flex items-center gap-2 uppercase tracking-wide">
+                        <span class="lang-es">Solicitar</span><span class="lang-en">Request</span> <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
             
             <!-- Seguros -->
             <div class="min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center bg-white border-2 border-slate rounded-[2rem] shadow-sm hover:shadow-xl hover:border-sand/40 transition-all flex flex-col h-full overflow-hidden group relative">
                 <div class="absolute top-0 right-0 bg-sand text-white text-[0.65rem] font-bold uppercase tracking-widest py-1.5 px-5 rounded-bl-2xl z-20 shadow-md">
-                    Agente Licenciada
+                    <span class="lang-es">Agente Licenciada</span><span class="lang-en">Licensed Agent</span>
                 </div>
                 <div class="h-56 md:h-64 w-full overflow-hidden relative z-10">
                     <img src="https://i.postimg.cc/KvpMxsvq/Gemini-Generated-Image-4jf1qu4jf1qu4jf1.png" alt="Seguros de Salud y Vida" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     <div class="absolute inset-0 bg-navy/10 group-hover:bg-transparent transition-colors duration-300"></div>
                 </div>
                 <div class="p-8 flex flex-col flex-grow z-10 bg-white">
-                    <h3 class="font-serif text-2xl font-bold text-navy mb-3">Seguros de Salud y Vida</h3>
-                    <p class="text-grayCorp text-sm leading-relaxed mb-6 flex-grow">Protege tu futuro. Asesoría oficial para elegir la póliza de vida o salud ideal para ti y tu familia.</p>
-                    <a href="#contacto" class="text-sand font-bold text-sm flex items-center gap-2 uppercase tracking-wide">Solicitar <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-3">
+                        <span class="lang-es">Seguros de Salud y Vida</span><span class="lang-en">Health & Life Insurance</span>
+                    </h3>
+                    <p class="text-grayCorp text-sm leading-relaxed mb-6 flex-grow">
+                        <span class="lang-es">Protege tu futuro. Asesoría oficial para elegir la póliza de vida o salud ideal para ti y tu familia.</span>
+                        <span class="lang-en">Protect your future. Official advice to choose the ideal life or health policy for you and your family.</span>
+                    </p>
+                    <a href="#contacto" class="text-sand font-bold text-sm flex items-center gap-2 uppercase tracking-wide">
+                        <span class="lang-es">Solicitar</span><span class="lang-en">Request</span> <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
@@ -182,9 +243,16 @@
                     <div class="absolute inset-0 bg-navy/10 group-hover:bg-transparent transition-colors duration-300"></div>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
-                    <h3 class="font-serif text-2xl font-bold text-navy mb-3">Constitución de Empresas</h3>
-                    <p class="text-grayCorp text-sm leading-relaxed mb-6 flex-grow">Apertura de LLCs, Corporaciones y obtención de EIN paso a paso para que emprendas con seguridad.</p>
-                    <a href="#contacto" class="text-sand font-bold text-sm flex items-center gap-2 uppercase tracking-wide">Solicitar <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-3">
+                        <span class="lang-es">Constitución de Empresas</span><span class="lang-en">Business Formation</span>
+                    </h3>
+                    <p class="text-grayCorp text-sm leading-relaxed mb-6 flex-grow">
+                        <span class="lang-es">Apertura de LLCs, Corporaciones y obtención de EIN paso a paso para que emprendas con seguridad.</span>
+                        <span class="lang-en">Opening LLCs, Corporations, and obtaining EIN step-by-step so you can start safely.</span>
+                    </p>
+                    <a href="#contacto" class="text-sand font-bold text-sm flex items-center gap-2 uppercase tracking-wide">
+                        <span class="lang-es">Solicitar</span><span class="lang-en">Request</span> <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
@@ -195,9 +263,16 @@
                     <div class="absolute inset-0 bg-navy/10 group-hover:bg-transparent transition-colors duration-300"></div>
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
-                    <h3 class="font-serif text-2xl font-bold text-navy mb-3">Traducciones Certificadas</h3>
-                    <p class="text-grayCorp text-sm leading-relaxed mb-6 flex-grow">Traducción precisa y con validez oficial para todos tus procesos migratorios y legales en EE.UU.</p>
-                    <a href="#contacto" class="text-sand font-bold text-sm flex items-center gap-2 uppercase tracking-wide">Solicitar <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="font-serif text-2xl font-bold text-navy mb-3">
+                        <span class="lang-es">Traducciones Certificadas</span><span class="lang-en">Certified Translations</span>
+                    </h3>
+                    <p class="text-grayCorp text-sm leading-relaxed mb-6 flex-grow">
+                        <span class="lang-es">Traducción precisa y con validez oficial para todos tus procesos migratorios y legales en EE.UU.</span>
+                        <span class="lang-en">Accurate and officially valid translation for all your immigration and legal processes in the U.S.</span>
+                    </p>
+                    <a href="#contacto" class="text-sand font-bold text-sm flex items-center gap-2 uppercase tracking-wide">
+                        <span class="lang-es">Solicitar</span><span class="lang-en">Request</span> <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
             
@@ -206,34 +281,39 @@
 
     <!-- Nosotros & Perfil Profesional -->
     <section id="nosotros" class="py-16 md:py-24 bg-navy rounded-[3rem] mx-2 md:mx-4 mb-16 text-white px-6 md:px-12 lg:px-20 overflow-hidden relative">
-        <!-- Detalle de fondo sutil -->
         <div class="absolute top-0 right-0 w-64 h-64 bg-sand rounded-full blur-[100px] opacity-20"></div>
         <div class="absolute bottom-0 left-0 w-80 h-80 bg-slate rounded-full blur-[120px] opacity-10"></div>
 
         <!-- Bloque Perfil Profesional -->
         <div class="bg-white text-navy rounded-[2.5rem] p-8 md:p-10 shadow-2xl relative z-10 mb-20 flex flex-col md:flex-row gap-8 items-center border border-white/50">
             <div class="w-full md:w-1/3 flex justify-center">
-                <img src="https://i.postimg.cc/GmqGYgcc/Captura_de_pantalla_2026_03_30_a_la(s)_11_38_00_a_m.png" alt="Evelyn Adriana Gonzalez Valera" class="w-64 md:w-full md:max-w-[280px] h-auto rounded-[2rem] border-4 border-slate shadow-lg object-cover">
+                <img src="https://i.postimg.cc/GmqGYgcc/Captura_de_pantalla_2026_03_30_a_la(s)_11_38_00_a_m.png" alt="Evelyn Gonzalez" class="w-64 md:w-full md:max-w-[280px] h-auto rounded-[2rem] border-4 border-slate shadow-lg object-cover">
             </div>
             <div class="w-full md:w-2/3">
-                <span class="bg-slate text-sand font-bold text-[0.65rem] uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 inline-block">Fundadora & Asesora Principal</span>
+                <span class="bg-slate text-sand font-bold text-[0.65rem] uppercase tracking-widest px-4 py-1.5 rounded-full mb-4 inline-block">
+                    <span class="lang-es">Fundadora & Asesora Principal</span><span class="lang-en">Founder & Principal Advisor</span>
+                </span>
                 <h2 class="font-serif text-3xl md:text-5xl font-bold mb-4 text-navy tracking-tight">Evelyn Gonzalez</h2>
                 <p class="text-grayCorp mb-4 leading-relaxed font-medium text-sm md:text-base">
-                    Abogada egresada en Venezuela con más de 20 años de sólida trayectoria en derecho laboral, civil, mercantil y de seguros, complementada con estudios superiores en Gerencia.
+                    <span class="lang-es">Abogada egresada en Venezuela con más de 20 años de sólida trayectoria en derecho laboral, civil, mercantil y de seguros, complementada con estudios superiores en Gerencia.</span>
+                    <span class="lang-en">Lawyer graduated in Venezuela with over 20 years of solid trajectory in labor, civil, commercial, and insurance law, complemented by higher studies in Management.</span>
                 </p>
                 <p class="text-grayCorp leading-relaxed font-medium text-sm md:text-base mb-6">
-                    Hoy, establecida en EE.UU., pone toda su experiencia al servicio de la comunidad hispana. Está certificada como preparadora de formas para procesos migratorios y cuenta con licencias oficiales vigentes como <strong>Notary Public de Florida</strong> y <strong>Agente de Seguros de Salud y Vida</strong>.
+                    <span class="lang-es">Hoy, establecida en EE.UU., pone toda su experiencia al servicio de la comunidad hispana. Está certificada como preparadora de formas para procesos migratorios y cuenta con licencias oficiales vigentes como <strong>Notary Public de Florida</strong> y <strong>Agente de Seguros de Salud y Vida</strong>.</span>
+                    <span class="lang-en">Today, established in the U.S., she puts all her experience at the service of the Hispanic community. She is certified as a form preparer for immigration processes and holds valid official licenses as a <strong>Florida Notary Public</strong> and <strong>Health & Life Insurance Agent</strong>.</span>
                 </p>
                 <!-- Badges de credenciales -->
                 <div class="flex flex-wrap gap-2 md:gap-3">
-                    <span class="bg-slate/60 text-navy text-[0.65rem] sm:text-xs font-bold px-4 py-2 rounded-full border border-slate"><i class="fas fa-balance-scale mr-1.5 text-sand"></i> +20 Años Experiencia</span>
-                    <span class="bg-slate/60 text-navy text-[0.65rem] sm:text-xs font-bold px-4 py-2 rounded-full border border-slate"><i class="fas fa-shield-heart mr-1.5 text-sand"></i> Licencia Seguros</span>
+                    <span class="bg-slate/60 text-navy text-[0.65rem] sm:text-xs font-bold px-4 py-2 rounded-full border border-slate"><i class="fas fa-balance-scale mr-1.5 text-sand"></i> <span class="lang-es">+20 Años Experiencia</span><span class="lang-en">20+ Years Exp.</span></span>
+                    <span class="bg-slate/60 text-navy text-[0.65rem] sm:text-xs font-bold px-4 py-2 rounded-full border border-slate"><i class="fas fa-shield-heart mr-1.5 text-sand"></i> <span class="lang-es">Licencia Seguros</span><span class="lang-en">Insurance Licensed</span></span>
                     <span class="bg-slate/60 text-navy text-[0.65rem] sm:text-xs font-bold px-4 py-2 rounded-full border border-slate"><i class="fas fa-file-signature mr-1.5 text-sand"></i> Notary Public FL</span>
                 </div>
             </div>
         </div>
 
-        <h3 class="font-serif text-3xl md:text-4xl font-bold mb-12 text-center relative z-10 text-white">Nuestra Filosofía de Trabajo</h3>
+        <h3 class="font-serif text-3xl md:text-4xl font-bold mb-12 text-center relative z-10 text-white">
+            <span class="lang-es">Nuestra Filosofía de Trabajo</span><span class="lang-en">Our Work Philosophy</span>
+        </h3>
         
         <div class="grid md:grid-cols-2 gap-8 relative z-10">
             <!-- Valores Institucionales -->
@@ -241,32 +321,52 @@
                 <div class="w-14 h-14 bg-sand rounded-full flex items-center justify-center mb-6 text-xl shadow-lg shadow-sand/20 text-white">
                     <i class="fas fa-handshake"></i>
                 </div>
-                <h4 class="font-serif text-2xl font-bold mb-3 text-white">Hablamos más que tu idioma</h4>
-                <p class="text-slate/80 text-sm leading-relaxed">Entendemos tu cultura y los retos de establecerte en Estados Unidos. Más allá de hablar español, te brindamos la confianza y la empatía que necesitas.</p>
+                <h4 class="font-serif text-2xl font-bold mb-3 text-white">
+                    <span class="lang-es">Hablamos más que tu idioma</span><span class="lang-en">We speak more than your language</span>
+                </h4>
+                <p class="text-slate/80 text-sm leading-relaxed">
+                    <span class="lang-es">Entendemos tu cultura y los retos de establecerte en Estados Unidos. Más allá de hablar español, te brindamos la confianza y la empatía que necesitas.</span>
+                    <span class="lang-en">We understand your culture and the challenges of settling in the United States. Beyond speaking Spanish, we provide the trust and empathy you need.</span>
+                </p>
             </div>
             
             <div class="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors">
                 <div class="w-14 h-14 bg-sand rounded-full flex items-center justify-center mb-6 text-xl shadow-lg shadow-sand/20 text-white">
                     <i class="fas fa-tasks"></i>
                 </div>
-                <h4 class="font-serif text-2xl font-bold mb-3 text-white">Procesos Inteligentes</h4>
-                <p class="text-slate/80 text-sm leading-relaxed">Respetamos tu tiempo. Optimizamos la recolección de datos para que tu grupo familiar trabaje de forma eficiente; por ejemplo, <strong class="text-white">el cónyuge no necesita volver a aportar el acta de matrimonio o documentos ya subidos por el titular</strong>.</p>
+                <h4 class="font-serif text-2xl font-bold mb-3 text-white">
+                    <span class="lang-es">Procesos Inteligentes</span><span class="lang-en">Smart Processes</span>
+                </h4>
+                <p class="text-slate/80 text-sm leading-relaxed">
+                    <span class="lang-es">Respetamos tu tiempo. Optimizamos la recolección de datos para que tu grupo familiar trabaje de forma eficiente; por ejemplo, <strong class="text-white">el cónyuge no necesita volver a aportar el acta de matrimonio o documentos ya subidos por el titular</strong>.</span>
+                    <span class="lang-en">We respect your time. We optimize data collection so your family group works efficiently; for example, <strong class="text-white">the spouse does not need to re-submit the marriage certificate or documents already uploaded by the main applicant</strong>.</span>
+                </p>
             </div>
 
             <div class="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors">
                 <div class="w-14 h-14 bg-sand rounded-full flex items-center justify-center mb-6 text-xl shadow-lg shadow-sand/20 text-white">
                     <i class="fas fa-shield-alt"></i>
                 </div>
-                <h4 class="font-serif text-2xl font-bold mb-3 text-white">Transparencia e Integridad</h4>
-                <p class="text-slate/80 text-sm leading-relaxed">Actuamos con honestidad y coherencia en todo momento. Construimos confianza basada en la claridad absoluta en cada interacción y formulario.</p>
+                <h4 class="font-serif text-2xl font-bold mb-3 text-white">
+                    <span class="lang-es">Transparencia e Integridad</span><span class="lang-en">Transparency & Integrity</span>
+                </h4>
+                <p class="text-slate/80 text-sm leading-relaxed">
+                    <span class="lang-es">Actuamos con honestidad y coherencia en todo momento. Construimos confianza basada en la claridad absoluta en cada interacción y formulario.</span>
+                    <span class="lang-en">We act with honesty and consistency at all times. We build trust based on absolute clarity in every interaction and form.</span>
+                </p>
             </div>
 
             <div class="bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 hover:bg-white/10 transition-colors">
                 <div class="w-14 h-14 bg-sand rounded-full flex items-center justify-center mb-6 text-xl shadow-lg shadow-sand/20 text-white">
                     <i class="fas fa-hands-helping"></i>
                 </div>
-                <h4 class="font-serif text-2xl font-bold mb-3 text-white">Compromiso y Solidaridad</h4>
-                <p class="text-slate/80 text-sm leading-relaxed">Nos ponemos en tu lugar para ofrecer soluciones personalizadas, trabajando juntos para mejorar la calidad de vida de nuestra comunidad hispana.</p>
+                <h4 class="font-serif text-2xl font-bold mb-3 text-white">
+                    <span class="lang-es">Compromiso y Solidaridad</span><span class="lang-en">Commitment & Solidarity</span>
+                </h4>
+                <p class="text-slate/80 text-sm leading-relaxed">
+                    <span class="lang-es">Nos ponemos en tu lugar para ofrecer soluciones personalizadas, trabajando juntos para mejorar la calidad de vida de nuestra comunidad hispana.</span>
+                    <span class="lang-en">We put ourselves in your shoes to offer personalized solutions, working together to improve the quality of life of our Hispanic community.</span>
+                </p>
             </div>
         </div>
     </section>
@@ -279,9 +379,12 @@
                 <!-- Info de Contacto -->
                 <div class="lg:w-2/5 bg-navy text-white p-10 md:p-14 flex flex-col justify-center relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-sand opacity-20 rounded-bl-full"></div>
-                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 z-10">Iniciemos tu trámite</h2>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 z-10">
+                        <span class="lang-es">Iniciemos tu trámite</span><span class="lang-en">Let's start your process</span>
+                    </h2>
                     <p class="text-slate/80 font-medium mb-12 text-sm z-10 leading-relaxed">
-                        Agende una consulta o solicite información sobre nuestros servicios.
+                        <span class="lang-es">Agende una consulta o solicite información sobre nuestros servicios.</span>
+                        <span class="lang-en">Schedule a consultation or request information about our services.</span>
                     </p>
                     
                     <div class="space-y-8 relative z-10">
@@ -298,7 +401,9 @@
 
                     <!-- Redes Sociales -->
                     <div class="mt-12 relative z-10">
-                        <p class="text-[0.65rem] text-slate/60 uppercase tracking-widest mb-4 font-bold">Síguenos en redes:</p>
+                        <p class="text-[0.65rem] text-slate/60 uppercase tracking-widest mb-4 font-bold">
+                            <span class="lang-es">Síguenos en redes:</span><span class="lang-en">Follow us on social media:</span>
+                        </p>
                         <div class="flex space-x-4">
                             <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-sand transition-all text-lg text-white">
                                 <i class="fab fa-instagram"></i>
@@ -315,36 +420,46 @@
 
                 <!-- Formulario -->
                 <div class="lg:w-3/5 p-10 md:p-14 bg-white">
-                    <h3 class="font-serif text-3xl font-bold text-navy mb-8">Envíanos un mensaje</h3>
+                    <h3 class="font-serif text-3xl font-bold text-navy mb-8">
+                        <span class="lang-es">Envíanos un mensaje</span><span class="lang-en">Send us a message</span>
+                    </h3>
                     <form id="whatsappForm" class="space-y-6">
                         <div>
-                            <label class="block text-xs font-bold text-grayCorp uppercase tracking-wider mb-2">Nombre Completo</label>
+                            <label class="block text-xs font-bold text-grayCorp uppercase tracking-wider mb-2">
+                                <span class="lang-es">Nombre Completo</span><span class="lang-en">Full Name</span>
+                            </label>
                             <input type="text" id="form_nombre" class="w-full px-5 py-3.5 bg-slate/50 border border-transparent rounded-xl focus:ring-2 focus:ring-sand focus:border-sand outline-none text-navy transition-all font-medium" placeholder="Ej. Carlos Martínez" required>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-xs font-bold text-grayCorp uppercase tracking-wider mb-2">Teléfono</label>
+                                <label class="block text-xs font-bold text-grayCorp uppercase tracking-wider mb-2">
+                                    <span class="lang-es">Teléfono</span><span class="lang-en">Phone</span>
+                                </label>
                                 <input type="tel" id="form_tel" class="w-full px-5 py-3.5 bg-slate/50 border border-transparent rounded-xl focus:ring-2 focus:ring-sand focus:border-sand outline-none text-navy transition-all font-medium" placeholder="+1 (555) 000-0000" required>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-grayCorp uppercase tracking-wider mb-2">Servicio de Interés</label>
+                                <label class="block text-xs font-bold text-grayCorp uppercase tracking-wider mb-2">
+                                    <span class="lang-es">Servicio de Interés</span><span class="lang-en">Service of Interest</span>
+                                </label>
                                 <select id="form_servicio" class="w-full px-5 py-3.5 bg-slate/50 border border-transparent rounded-xl focus:ring-2 focus:ring-sand focus:border-sand outline-none text-navy transition-all font-medium appearance-none">
-                                    <option>Inmigración</option>
-                                    <option>Notary Public</option>
-                                    <option>Taxes Personales</option>
-                                    <option>Constitución de Empresas</option>
-                                    <option>Seguros de Salud y Vida</option>
-                                    <option>Traducciones Certificadas</option>
+                                    <option value="Inmigración">Inmigración</option>
+                                    <option value="Notary Public">Notary Public</option>
+                                    <option value="Taxes Personales">Taxes Personales</option>
+                                    <option value="Constitución de Empresas">Constitución de Empresas</option>
+                                    <option value="Seguros de Salud y Vida">Seguros de Salud y Vida</option>
+                                    <option value="Traducciones Certificadas">Traducciones Certificadas</option>
                                 </select>
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-grayCorp uppercase tracking-wider mb-2">Mensaje o Consulta</label>
+                            <label class="block text-xs font-bold text-grayCorp uppercase tracking-wider mb-2">
+                                <span class="lang-es">Mensaje o Consulta</span><span class="lang-en">Message or Inquiry</span>
+                            </label>
                             <textarea id="form_mensaje" rows="4" class="w-full px-5 py-3.5 bg-slate/50 border border-transparent rounded-xl focus:ring-2 focus:ring-sand focus:border-sand outline-none text-navy resize-none transition-all font-medium" placeholder="Escriba su mensaje aquí..." required></textarea>
                         </div>
                         <div class="pt-4">
                             <button type="submit" class="w-full md:w-auto bg-sand text-white font-bold px-10 py-4 rounded-full hover:bg-navy transition-colors flex items-center justify-center gap-3 shadow-lg shadow-sand/20">
-                                Enviar Solicitud <i class="fab fa-whatsapp text-xl"></i>
+                                <span class="lang-es">Enviar Solicitud</span><span class="lang-en">Send Request</span> <i class="fab fa-whatsapp text-xl"></i>
                             </button>
                         </div>
                     </form>
@@ -362,44 +477,83 @@
                 <img src="https://i.postimg.cc/6qQj2XSd/Logo-Evelyn-Gonzalez-Usa-(Vertical).png" alt="Evelyn Gonzalez Logo" class="h-32 md:h-48 w-auto object-contain">
             </div>
             
-            <p class="font-medium mb-6 text-slate/50 text-xs md:text-sm tracking-wide">&copy; 2026 evelyngonzalezusa.com. Todos los derechos reservados.</p>
+            <!-- Reducción de espacio lograda cambiando mb-6 a mb-1 aquí: -->
+            <p class="font-medium mb-1 text-slate/50 text-xs md:text-sm tracking-wide">
+                &copy; 2026 evelyngonzalezusa.com. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span>
+            </p>
             <p class="text-[0.65rem] md:text-xs font-medium text-slate/40 leading-relaxed px-4 md:px-12 max-w-3xl mx-auto">
-                Aviso Legal: Evelyn Gonzalez no es abogada en los Estados Unidos y tampoco representa a un bufete de abogados en los Estados Unidos, por lo tanto, no proporcionamos consejos ni asesorías legales.
+                <span class="lang-es">Aviso Legal: Evelyn Gonzalez no es abogada en los Estados Unidos y tampoco representa a un bufete de abogados en los Estados Unidos, por lo tanto, no proporcionamos consejos ni asesorías legales.</span>
+                <span class="lang-en">Legal Disclaimer: Evelyn Gonzalez is not an attorney in the United States and does not represent a law firm in the United States, therefore, we do not provide legal advice or counsel.</span>
             </p>
         </div>
     </footer>
 
-    <!-- Lógica de Interfaz y WhatsApp -->
+    <!-- Lógica de Interfaz, Idioma y WhatsApp -->
     <script>
         // --- Menú Móvil ---
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        // Alternar menú al hacer clic en el botón de hamburguesa
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Cerrar menú automáticamente al seleccionar una opción
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         });
 
+        // --- Sistema de Idioma ---
+        function toggleLanguage() {
+            const htmlTag = document.documentElement;
+            // Alternar atributo lang
+            htmlTag.lang = htmlTag.lang === 'es' ? 'en' : 'es';
+            const isEn = htmlTag.lang === 'en';
+
+            // Actualizar Placeholders del formulario
+            document.getElementById('form_nombre').placeholder = isEn ? 'e.g. John Doe' : 'Ej. Carlos Martínez';
+            document.getElementById('form_mensaje').placeholder = isEn ? 'Write your message here...' : 'Escriba su mensaje aquí...';
+
+            // Actualizar Opciones del Select de Servicios
+            const select = document.getElementById('form_servicio');
+            const optsEs = ["Inmigración", "Notary Public", "Taxes Personales", "Constitución de Empresas", "Seguros de Salud y Vida", "Traducciones Certificadas"];
+            const optsEn = ["Immigration", "Notary Public", "Personal Taxes", "Business Formation", "Health & Life Insurance", "Certified Translations"];
+            
+            const currentSelectionIndex = select.selectedIndex;
+            select.innerHTML = '';
+            
+            const activeOptions = isEn ? optsEn : optsEs;
+            activeOptions.forEach(opt => {
+                const option = document.createElement('option');
+                option.text = opt;
+                option.value = opt; // Mantenemos el value igual al texto para facilidad de lectura en Whatsapp
+                select.add(option);
+            });
+            
+            // Restaurar selección si es posible
+            select.selectedIndex = currentSelectionIndex;
+        }
+
         // --- Envío de Formulario a WhatsApp ---
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const CONST_TELEFONO = "12397036487"; 
+            const isEn = document.documentElement.lang === 'en';
             
             const nombre = document.getElementById('form_nombre').value;
             const tel = document.getElementById('form_tel').value;
             const servicio = document.getElementById('form_servicio').value;
             const mensaje = document.getElementById('form_mensaje').value;
             
-            const texto = `Hola Evelyn, mi nombre es ${nombre}.\nEstoy interesado en el servicio de: *${servicio}*.\n\nMi mensaje: ${mensaje}\n\nMi contacto: ${tel}`;
+            let texto = '';
+            if (isEn) {
+                texto = `Hello Evelyn, my name is ${nombre}.\nI am interested in the following service: *${servicio}*.\n\nMy message: ${mensaje}\n\nMy contact number: ${tel}`;
+            } else {
+                texto = `Hola Evelyn, mi nombre es ${nombre}.\nEstoy interesado en el servicio de: *${servicio}*.\n\nMi mensaje: ${mensaje}\n\nMi contacto: ${tel}`;
+            }
             
             const mensajeFinal = encodeURIComponent(texto);
             
